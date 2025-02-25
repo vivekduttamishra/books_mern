@@ -1,0 +1,15 @@
+header{
+    background:black;
+    box-shadow:-2px -2px 2px gray;
+    margin-bottom:5px;
+    color:white;
+}
+
+.btn-default{
+    color:white !important;
+}
+
+#book_cover_big{
+    height:300px;
+
+}

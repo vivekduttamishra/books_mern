@@ -1,0 +1,21 @@
+{
+   "200": {
+      "get /api/books": 1,
+      "get /api/users": 3
+   },
+   "304": {
+      "get /api/books": 1
+   },
+   "401": {
+      "post /api/users/signin": 13
+   },
+   "404": {
+      "get /cover2.jpg": 1,
+      "get /cover1.jpg": 1,
+      "get /bootstrap.css.map": 1,
+      "get /kurkshetra.png": 1
+   },
+   "500": {
+      "get /api/users": 7
+   }
+}

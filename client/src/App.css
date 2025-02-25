@@ -1,0 +1,22 @@
+.author-card{
+    width: 200px;
+    margin:5px;
+}
+
+.author-details-screen img{
+    width:200px;
+    border:20px solid black;
+    padding:5px;
+    border-radius: 20px;
+    box-shadow: -5px -5px 5px gray;
+    margin:10px;
+    
+}
+
+.validation-error input{
+    border-left:5px solid red;
+}
+
+.validation-success input{
+    border-left:5px solid green;
+}

@@ -1,0 +1,7 @@
+@apiUrl = https://localhost:4000/api/authors
+
+### Get All Authors
+GET {{apiUrl}}
+
+### Get Invalid Author
+GET {{apiUrl}}/invalid-author
