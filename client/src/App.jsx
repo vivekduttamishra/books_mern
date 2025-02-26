@@ -25,7 +25,7 @@ function App() {
   return (
     <div>
       <Router>
-        <Header title="Book's Web" />
+        <Header title="World of Books" />
 
         <div className="screen container">
           <Routes>
