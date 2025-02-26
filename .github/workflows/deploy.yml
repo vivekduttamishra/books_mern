@@ -30,7 +30,7 @@ jobs:
             
             # Install frontend dependencies and build React
             cd client
-            npm ci --omit=dev
+            npm ci
             npm run build
             
             # Install backend dependencies (only production)
