@@ -1,5 +1,5 @@
 
-const Loading = ({condition=true,image='/public/loading01.gif', size=100})=>{
+const Loading = ({condition=true,image='/loading01.gif', size=100})=>{
 
     const _style={
         width: size,        
