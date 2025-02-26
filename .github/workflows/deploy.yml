@@ -1,0 +1,45 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Decode Private Key
+        run: |
+          echo "${{ secrets.EC2_PEM }}" | base64 --decode > key.pem
+          chmod 600 key.pem
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: 54.221.173.45
+          username: ubuntu
+          key_path: key.pem  
+          script: |
+            cd ~/books_mern
+            git pull origin main
+            
+            # Install frontend dependencies and build React
+            cd client
+            npm ci --omit=dev
+            npm run build
+            
+            # Install backend dependencies (only production)
+            cd ../server
+            npm ci --omit=dev
+            
+            # Restart the application with PM2
+            sudo pm2 restart books || sudo pm2 start src/main.js --name books
+            
+            # Ensure PM2 starts on reboot
+            sudo pm2 save
+            sudo pm2 startup systemd
